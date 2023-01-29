@@ -182,16 +182,16 @@
         <div class="row">
           <div class="col">
             <h3>Object Identier</h2>
-              <img src="{% static 'person1.jpg' %}" alt="" class="img-fluid">
+              <img src="{% static 'object_identifier.jpeg' %}" alt="" class="img-fluid">
             <div class="row">
               <div class="col">
-                <button>Try it!</button>          
+                <button>Try it!</button> 
               </div>
             </div>
           </div> 
           <div class="col">
             <h3>Sentiment Analyzer</h2>
-              <img src="{% static 'person1.jpg' %}" alt="" class="img-fluid">
+              <img src="{% static 'sentiment_analyzer.png' %}" alt="" class="img-fluid">
             <div class="row">
               <div class="col">
                 <button>Try it!</button>          
@@ -199,18 +199,23 @@
             </div>
           </div> 
           <div class="col">
-            <h3>Image to Text</h2>
-              <img src="{% static 'person1.jpg' %}" alt="" class="img-fluid">
-            <div class="row">
-              <div class="col">
-                <button>Try it!</button>          
+            <form action="image_to_text" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div class="row">
+                <div class="col">
+                <h3>Image to Text</h2>
+                <img src="{% static 'image_to_text.png' %}" alt="" class="img-fluid">
+                <div class="row">
+                <div class="col">
+                  <input type="file" name="oi_image" />
+                  <input type="submit" value="Run Image To Text Converter" />  
+                </div>
               </div>
-            </div>
-          </div> 
-        </div>  
-      </div>
-    </div>
-
+            </div> 
+          </div>
+        </div>
+</div>
     <!-- CONTACT -->
     <div id="contact" class="collapse">
       <div class="card card-body bg-danger text-white py-5">
